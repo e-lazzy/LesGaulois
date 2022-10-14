@@ -1,5 +1,7 @@
 package personnages;
 
+import lieux.Village;
+
 public class Chef {
 	private String nom;
 	private int force;
@@ -19,13 +21,13 @@ public class Chef {
 	
 
 	 public void parler(String texte) { 
-	 System.out.println(prendreParole() + "« " + texte + "»"); 
+	 System.out.println(prendreParole() + "ï¿½ " + texte + "ï¿½"); 
 	 } 
 	 private String prendreParole() { 
 	 return "Le chef " + nom + " du village " + village.getNom() + " : "; 
 	 } 
 	 public void frapper(Romain romain) { 
-	 System.out.println(nom  +  "  envoie  un  grand  coup  dans  la  mâchoire  de  "  + 
+	 System.out.println(nom  +  "  envoie  un  grand  coup  dans  la  mï¿½choire  de  "  + 
 	 romain.getNom()); 
 	 romain.recevoirCoup(force / 3); 
 	 } 
