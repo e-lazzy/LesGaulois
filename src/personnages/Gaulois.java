@@ -3,9 +3,16 @@ package personnages;
 
 
 public class Gaulois {
+	
+	
 	private String nom;
 	private int force;
 	private int effetPotion = 1;
+	
+	//Attributs en plus
+	private int force, nb_trophees;
+	private Equipement trophees[] = new Equipement[100];
+	
 	public Gaulois(String nom, int force) {
 		this.nom = nom;
 		this.force = force;
