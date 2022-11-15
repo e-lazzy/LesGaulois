@@ -1,26 +1,39 @@
 package histoire;
 
-import personnages.*;
-
+import objets.Equipement;
+import personnages.Druide;
+import personnages.Gaulois;
+import personnages.Romain;
+import lieux.Musee;
 
 public class Scenario {
 
 	public static void main(String[] args) {
-		 Gaulois asterix =new Gaulois("Asterix", 8);
-		 Gaulois obelix = new Gaulois("Obelix",50);
-		 Romain minus = new Romain("Minus ",6);
-		 Druide panoramix= new Druide("panoramix",5,10);
-		 panoramix.parler("Je vais preparer un potion");
-		 panoramix.preparerPotion();
-		 panoramix.booster(obelix);
-		 panoramix.booster(asterix);
-		 minus.parler("UN GAU GAU");
-	
-		 minus.sEquiper(Equipement.CASQUE);
-		 minus.sEquiper(Equipement.CASQUE);
-		 minus.sEquiper(Equipement.BOUCLIER);
-		 minus.sEquiper(Equipement.BOUCLIER);
-		 asterix.frapper(minus);
-	}
-	
+		Druide druide = new Druide("Panoramix", 5, 10);
+		druide.parler("Je vais aller préparer une petite potion...");
+		druide.preparerPotion();
+		Gaulois obelix = new Gaulois("Obélix", 25);
+		Gaulois asterix = new Gaulois("Astérix", 8);
+		druide.booster(obelix);
+		obelix.parler("Par Bélénos, ce n'est pas juste !");
+		druide.booster(asterix);
+		asterix.parler("Bonjour");
+		Romain minus = new Romain("Minus", 6);
+		Romain milexcus = new Romain("Milexcus", 8);
+		minus.sEquiper(Equipement.BOUCLIER);
+		minus.sEquiper(Equipement.CASQUE);
+		milexcus.sEquiper(Equipement.CASQUE);
+		minus.parler("UN GAU... UN GAUGAU...");
+		do {
+			asterix.frapper(minus);
+		} while (minus.getForce() > 0);
+		milexcus.parler("UN GAU... UN GAUGAU...");
+		do {
+			asterix.frapper(milexcus);
+		} while (milexcus.getForce() > 0);
+		
+		Musee musee = new Musee();
+	asterix.faireUneDonnation(musee);
+		System.out.println(musee.extraireInstructionCaml());	}
+
 }

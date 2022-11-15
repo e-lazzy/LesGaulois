@@ -1,4 +1,4 @@
-package personnages;
+package objets;
 
 public enum Equipement {
 	CASQUE("Casque"), BOUCLIER("Bouclier");
@@ -7,6 +7,7 @@ public enum Equipement {
 	Equipement(String nom) {
 		this.nom = nom;
 	}
+	@Override
 	public String toString() {
 		return nom;
 	}

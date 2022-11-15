@@ -2,33 +2,24 @@ package personnages;
 
 import lieux.Village;
 
-public class Chef {
-	private String nom;
-	private int force;
-	private int effetPotion;
+public class Chef extends Gaulois{
 	private Village village;
 	public Chef(String nom, int force, Village village) {
-		super();
-		this.nom = nom;
-		this.force = force;
-		this.effetPotion = 1;
+		super(nom,force);
 		this.village = village;
 	}
 	
-	public String getNom() {
-		return nom;
-	}
-	
-
+	 @Override
 	 public void parler(String texte) { 
 	 System.out.println(prendreParole() + "� " + texte + "�"); 
 	 } 
-	 private String prendreParole() { 
-	 return "Le chef " + nom + " du village " + village.getNom() + " : "; 
+	 
+	 public String prendreParole() { 
+	 return "Le chef " + getNom() + " du village " + village.getNom() + " : "; 
 	 } 
 	 public void frapper(Romain romain) { 
-	 System.out.println(nom  +  "  envoie  un  grand  coup  dans  la  m�choire  de  "  + 
+	 System.out.println(getNom()  +  "  envoie  un  grand  coup  dans  la  m�choire  de  "  + 
 	 romain.getNom()); 
-	 romain.recevoirCoup(force / 3); 
+	 romain.recevoirCoup(getForce() / 3); 
 	 } 
 }
